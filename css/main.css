@@ -1,0 +1,883 @@
+/*----------------------------------------------------------------------------------------------------*/
+
+
+/*Schedule list*/
+
+.custom-padding {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.custom-list {
+    counter-reset: li;
+    list-style: none;
+    *list-style: decimal;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 20px;
+    padding-left: 0;
+    /*opacity: 0;*/
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.rectangle-list span {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;
+}
+
+.rectangle-list span:hover {
+    background: #eee;
+}
+
+.rectangle-list span:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.rectangle-list span:after {
+    position: absolute;
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;
+}
+
+.rectangle-list span:hover:after {
+    left: -.5em;
+    border-left-color: #fa8072;
+}
+
+.list-heading {
+    width: 100%;
+    /*padding-left: 40px;*/
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Share Tech Mono', sans-serif;
+}
+
+
+/*-------------------------------end schedule list-------------------------------------*/
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+
+.intro {
+    height: 100%;
+    width: 100%;
+    display: table;
+    font-size: 16px;
+}
+
+.intro-body {
+    height: 100%;
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.add-padding {
+    padding-top: 50px;
+}
+
+.nav-style {
+    border-radius: 0px;
+    border: 0px;
+    opacity: 0.75;
+    margin-bottom: 0px;
+    z-index: 10;
+}
+
+.nav-text {
+    font-family: 'Aldrich', sans-serif;
+}
+
+.hvr-underline-reveal:before {
+    background-color: #f2ae72;
+}
+
+.wide {
+    width: 100%;
+    height: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    /*background-image:url('../images/background.png');*/
+    background-size: cover;
+}
+
+#particles-js {
+    z-index: -20;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.heading {
+    color: white;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 5.000em;
+    /*0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff,  0 0 70px #fff, 0 0 80px #fff  , 0 0 100px #fff, 0 0 150px #fff*/
+    text-shadow: 0 0 0.313em #fff, 0 0 0.625em #fff;
+    /*text-shadow: 0 0 20px #ff0;*/
+}
+
+.heading-2 {
+    color: #d96459;
+    text-shadow: 0 0 0.313em #d96459, 0 0 0.625em #d96459;
+}
+
+.sub-heading {
+    font-family: 'Share Tech Mono', sans-serif;
+    font-size: 1.375em;
+    color: #588c7e;
+}
+
+.logo-back {
+    position: absolute;
+    height: 12.500em;
+    width: 12.500em;
+    transform: scale(1.5, 1.5);
+    /*opacity: 0.8;*/
+    filter: blur(0.250em) brightness(80%);
+    -webkit-filter: blur(0.250em) brightness(80%);
+    /*border: 1px solid black;*/
+}
+
+.logo {
+    height: 12.500em;
+    width: 12.500em;
+    transform: scale(1.5, 1.5);
+    opacity: 0.8;
+    filter: brightness(180%);
+    -webkit-filter: brightness(180%);
+    /*border: 1px solid black;*/
+}
+
+.register-btn {
+    letter-spacing: 0.125em;
+    font-size: 1.500em;
+    font-family: 'Aldrich', sans-serif;
+    font-weight: 300;
+    padding-top: 1.3rem;
+    padding-bottom: 1.0rem;
+    /*background: #0D6;*/
+    background-color: #d96459;
+    border: 0.063em solid #d96459;
+    line-height: 1.375;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+    /*height: 3.750em;
+    width: 13.750em;*/
+}
+
+.head-tags {
+    font-size: 30px;
+    font-family: 'Share Tech Mono', sans-serif;
+}
+
+.sub-heading-1,
+.sub-heading-2,
+.sub-heading-3,
+.sub-heading-4,
+.sub-heading-5,
+.sub-heading-6 {
+    width: 0px;
+    font-size: 35px;
+    font-family: 'Share Tech Mono', sans-serif;
+}
+
+.slant-shadow {
+    position: absolute;
+    z-index: -10;
+    filter: drop-shadow(0 0 16px rgba(50, 50, 50, 0.75));
+    filter: drop-shadow(0 0 16px rgba(41, 34, 73, 0.75));
+    -webkit-filter: drop-shadow(0 0 16px rgba(50, 50, 50, 0.75));
+    -webkit-filter: drop-shadow(0 0 16px rgba(41, 34, 73, 0.75));
+}
+
+.outer-subpart-1 {
+    background-color: #588c7e;
+    z-index: 2;
+}
+
+.outer-subpart-2 {
+    margin-top: 200px;
+    padding-bottom: 30px;
+    background-color: #588c7e;
+    z-index: 2;
+}
+
+.outer-subpart-3 {
+    margin-top: 150px;
+    /*background-color: #588c7e;*/
+    z-index: 2;
+}
+
+.outer-subpart-4 {
+    margin-top: 190px;
+    /*margin-bottom: 100px;*/
+    background-color: #d96459;
+    z-index: 2;
+}
+
+.outer-subpart-6 {
+    padding-top: 50px;
+    margin-top: 190px;
+    background-color: #d96459;
+    z-index: 2;
+    padding-bottom: 100px;
+}
+
+.outer-subpart-5 {
+    margin-top: 150px;
+    /*background-color: #d96459;*/
+    z-index: 2;
+}
+
+.slant-2 {
+    margin-top: 50px;
+}
+
+.slant-4 {
+    margin-top: 90px;
+}
+
+.subpart-1-text {
+    font-size: 1.500em;
+    /*font-family: 'Share Tech Mono', sans-serif;*/
+    font-family: 'Aldrich', sans-serif;
+}
+
+.subpart-2 {
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+/*.gear {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    overflow-x: hidden;
+    z-index: -20;
+    opacity: 0.8;
+}
+
+.gear-big {
+    top: 54%;
+    left: 2%;
+}
+
+.gear-small {
+    top: 70%;
+    left: -3%;
+}
+
+.gear-med {
+    top: 82%;
+    right: 5%;
+}
+*/
+
+.gear {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    overflow-x: hidden;
+    z-index: -20;
+    opacity: 0.8;
+    margin-top: 50px;
+}
+
+.gear-big {
+    top: 530px;
+    left: 50px;
+}
+
+.gear-small {
+    top: 682px;
+    left: -12px;
+}
+
+.gear-med {
+    top: 730px;
+    right: 85px;
+}
+
+.triangle-1 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100px 1000px 0;
+    border-color: transparent #588c7e transparent transparent;
+}
+
+.triangle-2 {
+    position: absolute;
+    margin-top: 100px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100px 0 0 1000px;
+    border-color: transparent transparent transparent #588c7e;
+}
+
+.triangle-3 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100px 1000px 0 0;
+    border-color: #588c7e transparent transparent transparent;
+}
+
+.triangle-4 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 1000px 100px 0;
+    border-color: transparent #d96459 transparent transparent;
+}
+
+.triangle-5 {
+    margin-top: 90px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100px 0 0 1000px;
+    border-color: transparent transparent transparent #588c7e;
+}
+
+.triangle-6 {
+    margin-top: 90px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 1000px;
+    border-color: transparent transparent #d96459 transparent;
+}
+
+.triangle-7 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 1000px 100px 0;
+    border-color: transparent #588c7e transparent transparent;
+}
+
+.triangle-8 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100px 1000px 0 0;
+    border-color: #d96459 transparent transparent transparent;
+}
+
+.shadow {
+    /*z-index: -10;
+    filter: drop-shadow(0 0 16px rgba(50, 50, 50, 0.75));
+    /*filter: drop-shadow(0 0 16px rgba(41, 34, 73, 0.75));*/
+    /*-webkit-filter: drop-shadow(0 0 16px rgba(50, 50, 50, 0.75));*/
+    /*-webkit-filter: drop-shadow(0 0 16px rgba(41, 34, 73, 0.75));*/
+    */
+}
+
+.info-outer {
+    margin-top: 150px;
+}
+
+.info-box {
+    box-shadow: 0 0.250em 0.500em 0 rgba(0, 0, 0, 0.2), 0 0.375em 1.250em 0 rgba(0, 0, 0, 0.19);
+    height: 18.750em;
+    width: 18.750em;
+    background-color: white;
+    border-width: 18.750em;
+    border-color: rgba(0, 0, 0, 0);
+    opacity: 0.85;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border: 9.375em dotted rgba(0, 0, 0, 0.7);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -ms-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+
+.info-box-animate {
+    border-width: 0;
+    border-color: rgba(0, 0, 0, 0.5);
+    border: 0em dashed rgba(0, 0, 0, 0.7);
+}
+
+.info-border {
+    box-shadow: 0 0.250em 0.500em 0 rgba(0, 0, 0, 0.2), 0 0.375em 1.250em 0 rgba(0, 0, 0, 0.19);
+    display: inline-block;
+    position: relative;
+    z-index: 5;
+    margin-left: 0.625em;
+    margin-right: 0.625em;
+    margin-top: 0.625em;
+    margin-bottom: 0.625em;
+    width: 20.000em;
+    border: 0.625em solid rgba(0, 0, 0, 0.3);
+}
+
+.info-heading {
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+    top: 36%;
+    position: absolute;
+    letter-spacing: 0.125em;
+    font-size: 3.375em;
+    font-family: 'Share Tech Mono', sans-serif;
+    font-weight: 300;
+    color: #fff;
+}
+
+.info-text {
+    z-index: 9;
+    /*width: 15.625em;*/
+    left: 10%;
+    opacity: 0;
+    text-align: center;
+    top: 1.875em;
+    font-size: 1.875em;
+    position: absolute;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.faq {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    padding-right: 50px;
+    padding-left: 3.125em;
+    /*background-color: white;*/
+}
+
+.faq-q {
+    cursor: pointer;
+    padding-top: 5px;
+    font-size: 1.250em;
+    font-family: 'Share Tech Mono', sans-serif;
+}
+
+.faq-a {
+    padding-left: 4.063em;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sponser-logo {
+    /*height: 260px;*/
+    /*width: 500px;*/
+}
+
+.team-image img {
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.team-image h4 {
+    font-family: 'Aldrich', sans-serif;
+}
+
+.team-image p {
+    font-family: 'Aldrich', sans-serif;
+}
+
+.map-border {
+    height: 31.250em;
+    width: 31.250em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 5;
+    margin-bottom: 0px;
+    border: 4px solid rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+    height: 55px;
+    padding-top: 15px;
+    /*padding-bottom: 20px;*/
+}
+
+.footer-text {
+    color: grey;
+    opacity: 0.5;
+    font-size: 16px;
+    font-family: 'Share Tech Mono', sans-serif;
+}
+
+.contact {
+    /*font-size: 16px;*/
+    padding-top: 20px;
+    font-family: 'Share Tech Mono', sans-serif;
+}
+
+.contact h2 {
+    padding-left: 40px;
+}
+
+.contact h3 {
+    padding-left: 40px;
+}
+
+.contact h4 {
+    padding-left: 60px;
+}
+
+.fa-heart {
+    color: red;
+}
+
+.days,
+.hours,
+.mins,
+.secs {
+    font-size: 40px;
+}
+
+
+/*media queries*/
+
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+    .tst {
+        max-width: 68%;
+        height: auto;
+        padding-top: 5%;
+    }
+    .gdg {
+        max-width: 80%;
+        height: auto;
+        padding-top: 25%;
+    }
+    .insedge {
+        padding-top: 10%;
+        max-width: 61%;
+        height: auto;
+    }
+    .hrank {
+        max-width: 105%;
+        height: auto;
+        padding-top: 8%;
+    }
+    .github {
+        max-width: 80%;
+        height: auto;
+        padding-top: 25%;
+    }
+    .shephertz {
+        max-width: 70%;
+        height: auto;
+        padding-top: 18%;
+    }
+    .coinsec {
+        max-width: 80%;
+        height: auto;
+    }
+    .lnb {
+        max-width: 80%;
+        height: auto;
+        padding-top: 15%;
+    }
+    .t69 {
+        max-width: 50%;
+        height: auto;
+        padding-top: 15%;
+    }
+    .liqserve {
+        max-width: 100%;
+        height: auto;
+        padding-top: 25%;
+    }
+    .jamb {
+        max-width: 100%;
+        height: auto;
+        padding-top: 25%;
+    }
+    .cloudb {
+        max-width: 100%;
+        height: auto;
+        padding-top: 25%;
+    }
+    .days,
+    .hours,
+    .mins,
+    .secs {
+        font-size: 40px;
+    }
+}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (max-width: 768px) {
+    .intro {
+        font-size: 16px
+    }
+    .subpart-1 {
+        font-size: 13px
+    }
+    .info-outer {
+        font-size: 11px
+    }
+    .footer-text {
+        font-size: 12px
+    }
+    .faq {
+        font-size: 12px
+    }
+    .map {
+        font-size: 11px
+    }
+    .pull-right {
+        text-align: center;
+    }
+    .sponser-logo {
+        /*height: 100px;*/
+        margin-bottom: 30px;
+    }
+    .tst {
+        max-width: 68%;
+        height: auto;
+        padding-top: 5%;
+        margin-bottom: 0px;
+    }
+    .gdg {
+        max-width: 80%;
+        height: auto;
+        /*padding-top: 25%;*/
+    }
+    .insedge {
+        padding-top: 10%;
+        max-width: 61%;
+        height: auto;
+    }
+    .hrank {
+        max-width: 105%;
+        height: auto;
+        padding-top: 8%;
+        margin-bottom: 0px;
+    }
+    .github {
+        max-width: 80%;
+        height: auto;
+        /*padding-top: 25%;*/
+    }
+    .shephertz {
+        max-width:70%;
+        height: auto;
+        margin-bottom: 0px;
+        /*padding-top: 25%;*/
+    }
+    .
+    .coinsec {
+        max-width: 80%;
+        height: auto;
+    }
+    .lnb {
+        max-width: 80%;
+        height: auto;
+        margin-bottom: 0px;
+        /*padding-top: 15%;*/
+    }
+    .t69 {
+        max-width: 50%;
+        height: auto;
+        padding-top: 15%;
+    }
+    .liqserve {
+        max-width: 80%;
+        height: auto;
+        /*padding-top: 25%;*/
+    }
+    .jamb {
+        max-width: 80%;
+        height: auto;
+        /*padding-top: 25%;*/
+    }
+    .cloudb {
+        max-width: 80%;
+        height: auto;
+        /*padding-top: 25%;*/
+    }
+    .days,
+    .hours,
+    .mins,
+    .secs {
+        font-size: 16px;
+    }
+}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width: 480px) {
+    .intro {
+        font-size: 9px
+    }
+    .subpart-1 {
+        font-size: 11px
+    }
+    .info-outer {
+        font-size: 14px
+    }
+    .footer-text {
+        font-size: 14px
+    }
+    .faq {
+        font-size: 10px
+    }
+    .map {
+        font-size: 9px
+    }
+    .pull-right {
+        text-align: center;
+    }
+    .gear-big {
+        top: 750px;
+        left: 20px;
+    }
+    .gear-small {
+        top: 902px;
+        left: -42px;
+    }
+    .gear-med {
+        top: 1580px;
+        right: 55px;
+    }
+    .sponser-logo {
+        /*height: 100px;*/
+        margin-bottom: 30px;
+    }
+    .tst {
+        max-width: 68%;
+        height: auto;
+        padding-top: 5%;
+        margin-bottom: 0px;
+    }
+    .gdg {
+        max-width: 80%;
+        height: auto;
+        /*padding-top: 25%;*/
+    }
+    .insedge {
+        padding-top: 10%;
+        max-width: 61%;
+        height: auto;
+    }
+    .hrank {
+        max-width: 105%;
+        height: auto;
+        padding-top: 8%;
+        margin-bottom: 0px;
+    }
+    .github {
+        max-width: 80%;
+        height: auto;
+        /*padding-top: 25%;*/
+    }
+    .shephertz {
+        max-width: 70%;
+        height: auto;
+        margin-bottom: 0px;
+        /*padding-top: 25%;*/
+    }
+    .coinsec {
+        max-width: 80%;
+        height: auto;
+    }
+    .lnb {
+        max-width: 80%;
+        height: auto;
+        margin-bottom: 0px;
+        /*padding-top: 15%;*/
+    }
+    .t69 {
+        max-width: 50%;
+        height: auto;
+        padding-top: 15%;
+    }
+    .liqserve {
+        max-width: 80%;
+        height: auto;
+        /*padding-top: 25%;*/
+    }
+    .jamb {
+        max-width: 80%;
+        height: auto;
+        /*padding-top: 25%;*/
+    }
+    .cloudb {
+        max-width: 80%;
+        height: auto;
+        /*padding-top: 25%;*/
+    }
+    .days,
+    .hours,
+    .mins,
+    .secs {
+        font-size: 14px;
+    }
+}
+
+
+/*even smaller devices (iphone 4,5)*/
+
+@media only screen and (max-width: 320px) {
+    .intro {
+        font-size: 7px
+    }
+}
