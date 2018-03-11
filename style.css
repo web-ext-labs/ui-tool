@@ -1,0 +1,114 @@
+:root {
+    --font-color: #fff;
+    --back-color: #B20040;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#questions, #welcome {
+    background: var(--back-color);
+    height: 100vh;
+    position: relative;
+}
+
+#welcome h1 {
+    color: var(--font-color);
+    font-size: 4em;
+    margin: 15px;
+}
+
+#welcome button {
+    font-size: 1em;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.question {
+    height: 100px;
+    position: absolute;
+    top: calc(50% - 50px);
+    text-align: center;
+    width: 100%;
+    transition: 0.5s all;
+}
+
+#welcome .question {
+    top: calc(50% - 70px);
+}
+
+.question label {
+    font-size: 1.5em;
+    color: var(--font-color);
+}
+
+.question > span {
+    display: inline-block;
+    margin-top: 15px;
+    position: relative;
+}
+
+.question input {
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    color: var(--font-color);
+    font-size: 2em;
+    padding: 5px 35px 5px 15px;
+}
+
+.question .go {
+    color: var(--font-color);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 30px; 
+    position: absolute;
+    right: 5px;
+    top: 5px
+}
+
+.question input:focus {
+    background: #D87E9E;
+}
+
+.button {
+    display: inline-block;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    min-width: 60px;
+    border-radius: 3px;
+    background: transparent;
+}
+
+.button:hover {
+    background: var(--font-color);
+    color: var(--back-color);
+}
+
+.button.active {
+    background: var(--font-color);
+    color: var(--back-color);
+}
+
+.button:first-child {
+    margin-right: 10px;
+}
+
+[data-active="false"] {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+[data-active="true"] {
+    opacity: 1;
+    transform: translateX(0);
+}

@@ -1,30 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title> Create-Web-Ext - boilerplate for your cross browser extension</title>
-    <meta name="description" content="Create-Web-Ext helps you create the basis for your own awesome cross browser web extension. Use Create-Web-Ext to quickly select the settings you want, and generate a cross browser web extension.">
-    <meta name="author" content="Web-ext-labs">
-    <meta property="og:title" content="Create-Web-Ext" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Create-Web-Ext" />
-    <meta itemprop="name" content="Create-Web-Ext">
-    <meta itemprop="description" content="Jump start your cross browser extension development! Create a custom cross browser extension boilerplate in 15 seconds using Create-Web-Ext!">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/hover-min.css" media="all">
-    <!-- FONTS -->
-    <link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Nunito:300' rel='stylessheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Webextensions</title>
+    <link href="style.css" rel="stylesheet" />
 </head>
-
 <body>
-    <h1 style="text-align:center;padding-top: 100px;"> Coming Soon!</h1>
+    <div id="welcome" class="show">
+        <div class="question">
+            <h1>WEBEXTENSIONS</h1>
+            <button onclick="toggleQuestions(true)" class="button">Let's create!</button>
+        </div>
+    </div>
+    <div id="questions" class="hide">
+        <div class="question" id="q-1" data-active="true">
+            <label>Extension name</label><br/>
+            <span>
+                <input type="text" autocomplete="off" placeholder="My extension" />
+                <span onclick="nextQuestion(2)" role="button" class="go">&rarr;</span>
+            </span>
+        </div>
+        <div class="question" id="q-2" data-active="false">
+            <label>Extension Description</label><br/>
+            <span>
+                <input type="text" autocomplete="off" placeholder="Description" />
+                <span onclick="nextQuestion(3)" role="button" class="go">&rarr;</span>
+            </span>
+        </div>
+        <div class="question" autocomplete="off"  id="q-3" data-active="false">
+            <label>Extension version</label><br/>
+            <span>
+                <input type="text" placeholder="0.0.1" />
+                <span role="button" onclick="nextQuestion(4)" class="go">&rarr;</span>
+            </span>
+        </div>
+        <div class="question" autocomplete="off" id="q-4" data-active="false">
+            <label>Do you want to add a background script?</label><br/>
+            <span>
+                <span class="button" onclick="nextQuestion(5)" role="button">Yes</span>
+                <span class="button" role="button">No</span> 
+            </span>
+        </div>
+        <div class="question" autocomplete="off" id="q-5" data-active="false">
+            <label>Do you want to add a content script?</label><br/>
+            <span>
+                <span class="button" onclick="nextQuestion(6)" role="button">Yes</span>
+                <span class="button" role="button">No</span> 
+            </span>
+        </div>
+       <div class="question" autocomplete="off" id="q-6" data-active="false">
+            <label>Do you want to add a browser action?</label><br/>
+            <span>
+               <span class="button" onclick="nextQuestion(7)" role="button">Yes</span>
+               <span class="button" role="button">No</span> 
+            </span>
+       </div>
+        <div class="question" autocomplete="off" id="q-7" data-active="false">
+             <label>Do you want to add a page action?</label><br/>
+              <span>
+               <span class="button" onclick="nextQuestion(8)" role="button">Yes</span>
+              <span class="button" role="button">No</span> 
+            </span>
+        </div>
+        <div class="question" autocomplete="off" id="q-8" data-active="false">
+            <label>Do you want to add extension options?</label><br/>
+            <span>
+           <span class="button" role="button">Yes</span>
+             <span class="button" role="button">No</span> 
+            </span>
+           </div>
+    </div>
 </body>
-
+<script src="script.js" ></script>
 </html>
