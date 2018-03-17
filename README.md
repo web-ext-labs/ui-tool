@@ -1,6 +1,6 @@
 # `create-web-ext ui tool`
 
-Build yourself a browser extension in 15sec. Check it out [here](http://webextensions.tech)
+Build yourself a boilerplate browser extension in 15sec. Check it out [here](http://webextensions.tech)
 
 
 [`create-web-ext-ui`](http://www.webextensions.tech) is a scaffolding tool for browser extensions. It is a simple way to jump start your browser extension development. Just select the type of extension you want, and you're off.
