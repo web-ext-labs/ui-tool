@@ -11,67 +11,70 @@
     <div id="welcome" class="show">
         <div class="question">
             <h1>WEBEXTENSIONS</h1>
-            <button onclick="toggleQuestions(true)" class="button">Let's create!</button>
+            <button onclick="toggleQuestions(true)" class="button">Let's create</button>
         </div>
     </div>
     <div id="questions" class="hide">
         <div class="question" id="q-1" data-active="true">
             <label>Extension name</label><br/>
             <span>
-                <input type="text" autocomplete="off" placeholder="My extension" />
-                <span onclick="nextQuestion(2)" role="button" class="go">&rarr;</span>
+                <input data-question="name" type="text" autocomplete="off" placeholder="My extension" />
+                <span data-next="2" role="button" class="go">&rarr;</span>
             </span>
         </div>
         <div class="question" id="q-2" data-active="false">
             <label>Extension Description</label><br/>
             <span>
-                <input type="text" autocomplete="off" placeholder="Description" />
-                <span onclick="nextQuestion(3)" role="button" class="go">&rarr;</span>
+                <input data-question="description" type="text" autocomplete="off" placeholder="Description" />
+                <span data-next="3" role="button" class="go">&rarr;</span>
             </span>
         </div>
-        <div class="question" autocomplete="off"  id="q-3" data-active="false">
+        <div class="question" autocomplete="off"  id="q-3" autocomplete="off" data-active="false">
             <label>Extension version</label><br/>
             <span>
-                <input type="text" placeholder="0.0.1" />
-                <span role="button" onclick="nextQuestion(4)" class="go">&rarr;</span>
+                <input data-validate="true" data-question="version" type="text" placeholder="0.0.1" />
+                <span data-next="4" role="button" class="go">&rarr;</span>
+                <span class="error">Extension version is not in correct format.</span>
             </span>
         </div>
         <div class="question" autocomplete="off" id="q-4" data-active="false">
             <label>Do you want to add a background script?</label><br/>
             <span>
-                <span class="button" onclick="nextQuestion(5)" role="button">Yes</span>
-                <span class="button" role="button">No</span> 
+                <span onclick="setValue('background_script', true, 5)" class="button" role="button">Yes</span>
+                <span onclick="setValue('background_script', false, 5)" class="button" role="button">No</span> 
             </span>
         </div>
         <div class="question" autocomplete="off" id="q-5" data-active="false">
             <label>Do you want to add a content script?</label><br/>
             <span>
-                <span class="button" onclick="nextQuestion(6)" role="button">Yes</span>
-                <span class="button" role="button">No</span> 
+                <span onclick="setValue('content_script', true, 6)" class="button" role="button">Yes</span>
+                <span onclick="setValue('content_script', false, 6)" class="button" role="button">No</span> 
             </span>
         </div>
        <div class="question" autocomplete="off" id="q-6" data-active="false">
             <label>Do you want to add a browser action?</label><br/>
             <span>
-               <span class="button" onclick="nextQuestion(7)" role="button">Yes</span>
-               <span class="button" role="button">No</span> 
+               <span onclick="setValue('browser_action', true, 7)" class="button" role="button">Yes</span>
+               <span onclick="setValue('browser_action', false, 7)" class="button" role="button">No</span> 
             </span>
        </div>
         <div class="question" autocomplete="off" id="q-7" data-active="false">
              <label>Do you want to add a page action?</label><br/>
               <span>
-               <span class="button" onclick="nextQuestion(8)" role="button">Yes</span>
-              <span class="button" role="button">No</span> 
+               <span onclick="setValue('page_action', true, 8)" class="button" role="button">Yes</span>
+              <span onclick="setValue('page_action', false, 8)" class="button" role="button">No</span> 
             </span>
         </div>
         <div class="question" autocomplete="off" id="q-8" data-active="false">
             <label>Do you want to add extension options?</label><br/>
             <span>
-           <span class="button" role="button">Yes</span>
-             <span class="button" role="button">No</span> 
+                <span onclick="setValue('options_ui', true, 0)" class="button" role="button">Yes</span>
+                <span onclick="setValue('options_ui', false, 0)" class="button" role="button">No</span> 
             </span>
            </div>
     </div>
 </body>
-<script src="script.js" ></script>
+<script src="scripts/FileSaver.js"></script>
+<script src="scripts/jszip.js"></script>
+<script src="scripts/script.js" ></script>
 </html>
