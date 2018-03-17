@@ -38,7 +38,11 @@ Array
 
 const setValue = (question, answer, next) => {
     response[question] = answer;
-    if(next) nextQuestion(next);
+    if (next === 0) {
+        createManifest();
+        return true;
+    }
+    nextQuestion(next);
 }
 
 const toggleQuestions = action => {
@@ -142,14 +146,14 @@ const createManifest = () => {
             'default_popup': 'pageAction/index.html',
             'default_title': manifestJson.name
         }
-        createorPromises.push(new Promise(()=>createFiles.popup(zip, 'pageAction')))
+        createorPromises.push(createFiles.popup(zip, 'pageAction'))
     }
 
     if (response.options_ui) {
         manifestJson.options_ui = {
             'page': 'options/index.html'
         }
-        createorPromises.push(new Promise(()=>createFiles.popup(zip, 'options')))
+        createorPromises.push(createFiles.popup(zip, 'options'))
     }
 
     Promise.all(createorPromises).then(data=>{
