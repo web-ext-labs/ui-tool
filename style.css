@@ -61,7 +61,13 @@ body {
     border-bottom: 2px solid #fff;
     color: var(--font-color);
     font-size: 2em;
+    outline: none;
     padding: 5px 35px 5px 15px;
+}
+
+.question input::placeholder {
+    color: var(--font-color);
+    opacity: 0.5;
 }
 
 .question .go {
@@ -74,6 +80,15 @@ body {
     top: 5px
 }
 
+.question .error {
+    display: none;
+    position: absolute;
+    bottom: -25px;
+    width: 100%;
+    left: 0;
+    color: #fff;
+    opacity: .7;
+}
 .question input:focus {
     background: #D87E9E;
 }
