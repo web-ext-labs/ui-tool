@@ -7,26 +7,14 @@ Build yourself a boilerplate browser extension in 15sec. Check it out [here](htt
 
 Why does this exist?
 --------------------
-Because We got super tired creating the file structure for a new extension over and over again. It doesn't use server side code! Don't believe me? Checkout the github repo.
+Because We got super tired creating the file structure for a new extension over and over again. It doesn't use server side code.
 
 Are you a terminal geek?
 --------------------
 For you , we have npm package, you can check it out [here](https://www.npmjs.com/package/create-web-ext)
 
-## Usage
 
-    $ create-web-ext
-    $ Addon name  (My extension) myAddon
-    $ Description My addon will rock \o/
-    $ Version  (0.0.1) 1.1.1
-    $ Include background script? (y/n) y
-    $ AddonInclude content script? (y/N) y
-    $ Include browser action? (y/N) y
-    $ Include page action? (y/N) y
-    $ Include addon options? (y/N) y
-    ✨  Done.
-    
-This will generate a directory `myAddon` with following structure
+The structure of your addon after unzipping will be like this :
 
 ```text
 myAddon
