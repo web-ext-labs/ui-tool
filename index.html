@@ -10,9 +10,9 @@
 </head>
 <body>
     <div id="welcome" class="show">
-        <div class="question">
+        <div class="heading">
             <h1>WEBEXTENSIONS</h1>
-            <button onclick="toggleQuestions(true)" class="button">Let's create</button>
+            <button onclick="changeScreen('questions')" class="button">Let's create</button>
         </div>
     </div>
     <div id="questions" class="hide">
@@ -73,6 +73,14 @@
                 <button onclick="setValue('options_ui', false, 0)" class="button" role="button">No</button>
             </span>
            </div>
+    </div>
+    <div id="thanks" class="hide">
+        <div class="heading">
+            <h1>You're all set</h1>
+            <p>Your extension folder has been downloaded. <br />If you like this tool please star the github repo.</p>
+            <small>Made with ❤ on <a class="importantLink" href="https://github.com/web-ext-labs/ui-tool/" title="web-ext-labs">Github</a></small>
+
+        </div>
     </div>
 </body>
 <script src="build.js" ></script>

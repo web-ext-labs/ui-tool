@@ -53,20 +53,20 @@ Array
 window.setValue = (question, answer, next) => {
     response[question] = answer;
     if (next === 0) {
-        createManifest(response);
+        createManifest(response)
+        .then(e => window.changeScreen('thanks'))
         return true;
     }
     nextQuestion(next);
 }
 
 // toggle homescreen
-window.toggleQuestions = action => {
-    if(action) {
-        document.getElementById("welcome").classList ="hide";
-        document.getElementById("questions").classList ="show";
+window.changeScreen = action => {
+    document.getElementById("welcome").classList ="hide";
+    document.getElementById("questions").classList ="hide";
+    document.getElementById("thanks").classList ="hide";
+    document.getElementById(action).classList ="show";
+    if(action === 'questions') {
         document.querySelector(`#q-1 input[type="text"]`).focus();
-    } else {
-        document.getElementById("welcome").classList ="show";
-        document.getElementById("questions").classList ="hide";
     }
 }

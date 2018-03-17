@@ -63,14 +63,15 @@ const createManifest = response => {
         createorPromises.push(createFiles.popup(zip, 'options'))
     }
 
-    Promise.all(createorPromises).then(data=>{
+    return Promise.all(createorPromises).then(data=>{
         zip.file("manifest.json", JSON.stringify(manifestJson, null, 2));
-        zip.generateAsync({type:"blob"})
-        .then(function(content) {
-            const name = manifestJson.name.replace(/[`~!@#$ %^&*()_|+\-=÷¿?;:'",.<>{}[\]\\/]/gi, '-').toLowerCase()
-            fileSaver.saveAs(content, `${name}.zip`);
-        });
-    }).catch(console.log)
+        return zip
+            .generateAsync({type:"blob"})
+            .then(function(content) {
+                const name = manifestJson.name.replace(/[`~!@#$ %^&*()_|+\-=÷¿?;:'",.<>{}[\]\\/]/gi, '-').toLowerCase()
+                return fileSaver.saveAs(content, `${name}.zip`);
+            });
+    }).catch(e => false)
 }
 
 module.exports = createManifest;
