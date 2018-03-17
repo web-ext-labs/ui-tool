@@ -98,20 +98,17 @@ body {
     border: 2px solid #fff;
     color: #fff;
     cursor: pointer;
+    font-size: 16px;
     padding: 10px;
-    min-width: 60px;
+    min-width: 100px;
     border-radius: 3px;
     background: transparent;
 }
 
-.button:hover {
+.button:hover, .button.active, .button:focus {
     background: var(--font-color);
     color: var(--back-color);
-}
-
-.button.active {
-    background: var(--font-color);
-    color: var(--back-color);
+    outline: none;
 }
 
 .button:first-child {

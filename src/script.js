@@ -4,6 +4,10 @@ const response = {};
 const nextQuestion = id => {
     Array.from(document.getElementsByClassName('question')).forEach(e=>e.setAttribute('data-active','false'));
     document.getElementById(`q-${id}`).setAttribute('data-active','true');
+    setTimeout(()=>{
+        if (document.querySelector(`#q-${id} input[type="text"]`)) document.querySelector(`#q-${id} input[type="text"]`).focus()
+        if (document.querySelector(`#q-${id} .button`)) document.querySelector(`#q-${id} .button`).focus()
+    }, 10)
 }
 
 const validate = (question, value) => {
@@ -37,6 +41,14 @@ Array
         })
     );
 
+Array
+    .from(document.querySelectorAll('input[type="text"]'))
+    .forEach(
+        e => e.addEventListener('keyup', ev => {
+            if(ev.keyCode === 13) e.nextElementSibling.click();
+        })
+    )
+
 // actions for button inputs
 window.setValue = (question, answer, next) => {
     response[question] = answer;
@@ -52,11 +64,9 @@ window.toggleQuestions = action => {
     if(action) {
         document.getElementById("welcome").classList ="hide";
         document.getElementById("questions").classList ="show";
+        document.querySelector(`#q-1 input[type="text"]`).focus();
     } else {
         document.getElementById("welcome").classList ="show";
         document.getElementById("questions").classList ="hide";
     }
 }
-
-
-
