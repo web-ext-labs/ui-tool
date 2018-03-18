@@ -1,20 +1,9 @@
-# `create-web-ext ui tool`
+# `create-web-ext-ui`
 
-Build yourself a boilerplate browser extension in 15sec. Check it out [here](http://webextensions.tech)
+[`create-web-ext-ui`](http://www.webextensions.tech) is a scaffolding UI tool for browser extensions. It lets you to input and select few parameters and outputs a complete boilerplate browser extension project. This folder will contain all the required folders and files to get started with the extension.
 
-
-[`create-web-ext-ui`](http://www.webextensions.tech) is a scaffolding tool for browser extensions. It is a simple way to jump start your browser extension development. Just select the type of extension you want, and you're off.
-
-Why does this exist?
---------------------
-Because We got super tired creating the file structure for a new extension over and over again. It doesn't use server side code.
-
-Are you a terminal geek?
---------------------
-For you , we have npm package, you can check it out [here](https://www.npmjs.com/package/create-web-ext)
-
-
-The structure of your addon after unzipping will be like this :
+##### Structure
+Following folder structure will be genearted, zipped and downloaded:
 
 ```text
 myAddon
@@ -36,3 +25,15 @@ myAddon
        ├── script.js
        └── style.css
 ```
+
+Why does this exist?
+--------------------
+Because we got super tired creating the file and folders for every new extension over and over again. #lazyDevs
+
+Are you a terminal geek?
+--------------------
+For you , we have npm package, you can check it out [`here`](https://www.npmjs.com/package/create-web-ext)
+
+Want to contribute?
+--------------------
+If you have suggestions please [`file an issue`](https://github.com/web-ext-labs/ui-tool/issues/new)
