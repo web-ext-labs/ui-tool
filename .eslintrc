@@ -1,0 +1,15 @@
+{
+  "globals": {
+    "describe": true,
+    "fetch": false,
+    "it": true,
+    "beforeEach": true,
+    "before": true,
+    "afterEach": true,
+    "window": false
+  },
+  "extends": "standard",
+  "rules": {
+    "arrow-parens": 0
+  }
+}
