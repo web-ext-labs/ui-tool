@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116597696-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'UA-116597696-1');
     </script>
@@ -15,7 +16,9 @@
     <title>Webextensions</title>
     <link href="style.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="https://addons.cdn.mozilla.net/static/img/favicon.ico?b=5fa7d1f9-59ef6e72" />
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
+
 <body>
     <div id="welcome" class="show">
         <div class="heading">
@@ -25,21 +28,24 @@
     </div>
     <div id="questions" class="hide">
         <div class="question" id="q-1" data-active="true">
-            <label>Extension name</label><br/>
+            <label>Extension name</label>
+            <br/>
             <span>
                 <input data-question="name" type="text" autocomplete="off" placeholder="My extension" />
                 <span data-next="2" role="button" class="go">&rarr;</span>
             </span>
         </div>
         <div class="question" id="q-2" data-active="false">
-            <label>Extension Description</label><br/>
+            <label>Extension Description</label>
+            <br/>
             <span>
                 <input data-question="description" type="text" autocomplete="off" placeholder="Description" />
                 <span data-next="3" role="button" class="go">&rarr;</span>
             </span>
         </div>
-        <div class="question" autocomplete="off"  id="q-3" data-active="false">
-            <label>Extension version</label><br/>
+        <div class="question" autocomplete="off" id="q-3" data-active="false">
+            <label>Extension version</label>
+            <br/>
             <span>
                 <input data-validate="true" data-question="version" type="text" placeholder="0.0.1" />
                 <span data-next="4" role="button" class="go">&rarr;</span>
@@ -47,61 +53,72 @@
             </span>
         </div>
         <div class="question" autocomplete="off" id="q-4" data-active="false">
-            <label>Do you want to add a background script?</label><br/>
+            <label>Do you want to add a background script?</label>
+            <br/>
             <span>
                 <button onclick="setValue('background_script', true, 5)" class="button" role="button">Yes</button>
                 <button onclick="setValue('background_script', false, 5)" class="button" role="button">No</button>
             </span>
         </div>
         <div class="question" autocomplete="off" id="q-5" data-active="false">
-            <label>Do you want to add a content script?</label><br/>
+            <label>Do you want to add a content script?</label>
+            <br/>
             <span>
                 <button onclick="setValue('content_script', true, 6)" class="button" role="button">Yes</button>
                 <button onclick="setValue('content_script', false, 6)" class="button" role="button">No</button>
             </span>
         </div>
-       <div class="question" autocomplete="off" id="q-6" data-active="false">
-            <label>Do you want to add a browser action?</label><br/>
+        <div class="question" autocomplete="off" id="q-6" data-active="false">
+            <label>Do you want to add a browser action?</label>
+            <br/>
             <span>
-               <button onclick="setValue('browser_action', true, 7)" class="button" role="button">Yes</button>
-               <button onclick="setValue('browser_action', false, 7)" class="button" role="button">No</button>
+                <button onclick="setValue('browser_action', true, 7)" class="button" role="button">Yes</button>
+                <button onclick="setValue('browser_action', false, 7)" class="button" role="button">No</button>
             </span>
-       </div>
+        </div>
         <div class="question" autocomplete="off" id="q-7" data-active="false">
-             <label>Do you want to add a page action?</label><br/>
-              <span>
+            <label>Do you want to add a page action?</label>
+            <br/>
+            <span>
                 <button onclick="setValue('page_action', true, 8)" class="button" role="button">Yes</button>
                 <button onclick="setValue('page_action', false, 8)" class="button" role="button">No</button>
             </span>
         </div>
         <div class="question" autocomplete="off" id="q-8" data-active="false">
-            <label>Do you want to add extension options?</label><br/>
+            <label>Do you want to add extension options?</label>
+            <br/>
             <span>
                 <button onclick="setValue('options_ui', true, 0)" class="button" role="button">Yes</button>
                 <button onclick="setValue('options_ui', false, 0)" class="button" role="button">No</button>
             </span>
-           </div>
+        </div>
     </div>
     <div id="thanks" class="hide">
         <div class="heading">
             <h1>You're all set</h1>
-            <p>Your extension folder has been downloaded. <br />If you like this tool please
+            <p>Your extension folder has been downloaded.
+                <br />If you like this tool please
                 <span>
-                    <iframe src="https://ghbtns.com/github-btn.html?user=web-ext-labs&repo=ui-tool&type=star" frameborder="0" scrolling="0" width="50px" height="20px"></iframe>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=web-ext-labs&repo=ui-tool&type=star" frameborder="0" scrolling="0" width="50px"
+                        height="20px"></iframe>
                 </span>
             </p>
 
         </div>
     </div>
     <footer>
-        <a href="https://www.mozilla.org" target="_blank" class="logo"><img src="img/logo.svg"></a>
+        <a href="https://www.mozilla.org" target="_blank" class="logo">
+            <img src="img/logo.svg">
+        </a>
         <nav>
             <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions" target="_blank">Developer resources</a>
             <a href="https://github.com/mdn/webextensions-examples" target="_blank">Sample extensions</a>
             <a href="https://github.com/web-ext-labs/ui-tool/issues" target="_blank">File an issue</a>
             <a href="https://developer.mozilla.org/en-US/Add-ons#Contact_us" target="_blank">Get help</a>
-        </nav> 
+            <a class="github-button" href="https://github.com/web-ext-labs/ui-tool" data-icon="octicon-star" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+        </nav>
     </footer>
-    <script src="build.js" ></script>
+    <script src="build.js"></script>
 </body>
+
 </html>
