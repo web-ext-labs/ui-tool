@@ -1,6 +1,6 @@
 {
   "name": "create-web-ext-ui-tool",
-  "version": "1.0",
+  "version": "1.1.0",
   "scripts": {
     "build": "webpack",
     "go": "webpack-dev-server --progress --colors",
