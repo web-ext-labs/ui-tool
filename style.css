@@ -185,6 +185,7 @@ footer nav {
   font-size: 14px;
   font-weight: lighter;
   opacity: 0.8;
+  margin-bottom: 15px!important;
 }
 footer nav a {
   display: inline-block;
