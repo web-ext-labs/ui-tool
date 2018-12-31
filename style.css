@@ -218,3 +218,8 @@ footer nav a:first-child {
     text-align: center;
   }
 }
+.FFLogo{
+  height: auto;
+  width: 30px;
+  margin-bottom: -5%;
+}
