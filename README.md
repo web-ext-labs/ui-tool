@@ -1,6 +1,6 @@
-# `create-web-ext-ui`
+# `webextensions.in`
 
-[Webextensions.tech](https://www.webextensions.tech) is a scaffolding UI tool for browser extensions. It lets you to input and select few parameters and outputs a complete boilerplate browser extension project. This folder will contain all the required folders and files to get started with the extension.
+[Webextensions.in](https://www.webextensions.in) is a scaffolding UI tool for browser extensions. It lets you to input and select few parameters and outputs a complete boilerplate browser extension project. This folder will contain all the required folders and files to get started with the extension.
 
 ##### Structure
 Following folder structure will be genearted, zipped and downloaded:
