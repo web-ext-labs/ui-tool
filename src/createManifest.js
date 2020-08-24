@@ -64,7 +64,7 @@ const createManifest = response => {
   }
 
   return Promise.all(createorPromises).then(data => {
-    zip.file('manifest.json', JSON.stringify(manifestJson, null, 2))
+    zip.file('myAddon/manifest.json', JSON.stringify(manifestJson, null, 2))
     return zip
       .generateAsync({ type: 'blob' })
       .then(content => {
