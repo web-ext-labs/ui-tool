@@ -15,13 +15,13 @@ const createManifest = response => {
   }
 
   const createorPromises = []
-  createorPromises.push(createFiles.icon(zip))
+  createorPromises.push(createFiles.icon(zip.folder(manifestJson.name)))
 
   if (response.background_script) {
     manifestJson.background = {
       'scripts': ['background_script.js']
     }
-    createorPromises.push(createFiles.bg(zip))
+    createorPromises.push(createFiles.bg(zip.folder(manifestJson.name)))
   }
 
   if (response.content_script) {
@@ -31,7 +31,7 @@ const createManifest = response => {
         'js': ['content_script.js']
       }
     ]
-    createorPromises.push(createFiles.cs(zip))
+    createorPromises.push(createFiles.cs(zip.folder(manifestJson.name)))
   }
 
   if (response.browser_action) {
@@ -42,7 +42,7 @@ const createManifest = response => {
       'default_popup': 'browserAction/index.html',
       'default_title': manifestJson.name
     }
-    createorPromises.push(createFiles.popup(zip, 'browserAction'))
+    createorPromises.push(createFiles.popup(zip.folder(manifestJson.name), 'browserAction'))
   }
 
   if (response.page_action) {
@@ -53,18 +53,18 @@ const createManifest = response => {
       'default_popup': 'pageAction/index.html',
       'default_title': manifestJson.name
     }
-    createorPromises.push(createFiles.popup(zip, 'pageAction'))
+    createorPromises.push(createFiles.popup(zip.folder(manifestJson.name), 'pageAction'))
   }
 
   if (response.options_ui) {
     manifestJson.options_ui = {
       'page': 'options/index.html'
     }
-    createorPromises.push(createFiles.popup(zip, 'options'))
+    createorPromises.push(createFiles.popup(zip.folder(manifestJson.name), 'options'))
   }
 
   return Promise.all(createorPromises).then(data => {
-    zip.file('manifest.json', JSON.stringify(manifestJson, null, 2))
+    zip.folder(manifestJson.name).file('manifest.json', JSON.stringify(manifestJson, null, 2))
     return zip
       .generateAsync({ type: 'blob' })
       .then(content => {
