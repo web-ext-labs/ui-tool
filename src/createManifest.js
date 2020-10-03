@@ -3,7 +3,7 @@ const fileSaver = require('file-saver')
 const createFiles = require('./fileCreater')
 
 const createManifest = response => {
-  const zip = new JSZip()
+  
   const manifestJson = {
     'manifest_version': 2,
     'name': response.name.trim() || 'My extension',
@@ -13,15 +13,17 @@ const createManifest = response => {
       '64': 'icons/icon.png'
     }
   }
-
+  const master_zip = new JSZip()
+  const zip = master_zip.folder(manifestJson.name)
+  //zip = zip.folder(manifestJson.name)
   const createorPromises = []
-  createorPromises.push(createFiles.icon(zip.folder(manifestJson.name)))
+  createorPromises.push(createFiles.icon(zip))
 
   if (response.background_script) {
     manifestJson.background = {
       'scripts': ['background_script.js']
     }
-    createorPromises.push(createFiles.bg(zip.folder(manifestJson.name)))
+    createorPromises.push(createFiles.bg(zip))
   }
 
   if (response.content_script) {
@@ -31,7 +33,7 @@ const createManifest = response => {
         'js': ['content_script.js']
       }
     ]
-    createorPromises.push(createFiles.cs(zip.folder(manifestJson.name)))
+    createorPromises.push(createFiles.cs(zip))
   }
 
   if (response.browser_action) {
@@ -42,7 +44,7 @@ const createManifest = response => {
       'default_popup': 'browserAction/index.html',
       'default_title': manifestJson.name
     }
-    createorPromises.push(createFiles.popup(zip.folder(manifestJson.name), 'browserAction'))
+    createorPromises.push(createFiles.popup(zip, 'browserAction'))
   }
 
   if (response.page_action) {
@@ -53,19 +55,19 @@ const createManifest = response => {
       'default_popup': 'pageAction/index.html',
       'default_title': manifestJson.name
     }
-    createorPromises.push(createFiles.popup(zip.folder(manifestJson.name), 'pageAction'))
+    createorPromises.push(createFiles.popup(zip, 'pageAction'))
   }
 
   if (response.options_ui) {
     manifestJson.options_ui = {
       'page': 'options/index.html'
     }
-    createorPromises.push(createFiles.popup(zip.folder(manifestJson.name), 'options'))
+    createorPromises.push(createFiles.popup(zip, 'options'))
   }
 
   return Promise.all(createorPromises).then(data => {
-    zip.folder(manifestJson.name).file('manifest.json', JSON.stringify(manifestJson, null, 2))
-    return zip
+    zip.file('manifest.json', JSON.stringify(manifestJson, null, 2))
+    return master_zip
       .generateAsync({ type: 'blob' })
       .then(content => {
         const name = manifestJson.name.replace(/[`~!@#$ %^&*()_|+\-=÷¿?;:'",.<>{}[\]\\/]/gi, '-').toLowerCase()
