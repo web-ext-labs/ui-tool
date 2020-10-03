@@ -3,7 +3,7 @@ const fileSaver = require('file-saver')
 const createFiles = require('./fileCreater')
 
 const createManifest = response => {
-  const zip = new JSZip()
+  const masterZip = new JSZip()
   const manifestJson = {
     'manifest_version': 2,
     'name': response.name.trim() || 'My extension',
@@ -13,6 +13,7 @@ const createManifest = response => {
       '64': 'icons/icon.png'
     }
   }
+  const zip = masterZip.folder(manifestJson.name)
 
   const createorPromises = []
   createorPromises.push(createFiles.icon(zip))
@@ -65,7 +66,7 @@ const createManifest = response => {
 
   return Promise.all(createorPromises).then(data => {
     zip.file('manifest.json', JSON.stringify(manifestJson, null, 2))
-    return zip
+    return masterZip
       .generateAsync({ type: 'blob' })
       .then(content => {
         const name = manifestJson.name.replace(/[`~!@#$ %^&*()_|+\-=÷¿?;:'",.<>{}[\]\\/]/gi, '-').toLowerCase()
