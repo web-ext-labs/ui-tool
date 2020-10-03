@@ -14,7 +14,7 @@ const createManifest = response => {
     }
   }
   const zip = masterZip.folder(manifestJson.name)
-  
+
   const createorPromises = []
   createorPromises.push(createFiles.icon(zip))
 
