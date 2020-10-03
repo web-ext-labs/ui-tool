@@ -2,6 +2,15 @@
 
 [Webextensions.in](https://www.webextensions.in) is a scaffolding UI tool for browser extensions. It lets you to input and select few parameters and outputs a complete boilerplate browser extension project. This folder will contain all the required folders and files to get started with the extension.
 
+## Development commands
+
+Here are some commands you can run:
+
+| Command | Description |
+| --- | --- |
+| yarn build | Build the website. |
+| yarn go | Start the local server at [http://localhost:8000/public](http://localhost:8000/public). |
+
 ##### Structure
 Following folder structure will be genearted, zipped and downloaded:
 
