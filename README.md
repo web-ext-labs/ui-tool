@@ -1,6 +1,6 @@
-# `webextensions.in`
+# `webext.eu`
 
-[Webextensions.in](https://www.webextensions.in) is a scaffolding UI tool for browser extensions. It lets you to input and select few parameters and outputs a complete boilerplate browser extension project. This folder will contain all the required folders and files to get started with the extension.
+[Webext.eu](https://www.webext.eu) is a scaffolding UI tool for browser extensions. It lets you to input and select few parameters and outputs a complete boilerplate browser extension project. This folder will contain all the required folders and files to get started with the extension.
 
 ## Development commands
 
