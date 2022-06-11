@@ -171,6 +171,7 @@ footer {
   padding: 10px 15px;
   position: absolute;
   width: calc(100% - 30px);
+  margin-bottom: 15px!important;
 }
 
 footer .logo {
