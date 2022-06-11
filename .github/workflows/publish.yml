@@ -1,0 +1,21 @@
+# This workflow will run build using node and then publish to github pages
+
+name: gh-pages publisher  🚀
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  publish-gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: git config user.name "Trishul Goel" && git config user.email "trishul.goel@gmail.com"
+      - run: npm run deploy
+        env:
+          GH_TOKEN: ${{secrets.SECRET_GITHUB_TOKEN}}
