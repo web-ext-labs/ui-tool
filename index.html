@@ -45,38 +45,46 @@
             </span>
         </div>
         <div class="question" autocomplete="off" id="q-4" data-active="false">
-            <label>Do you want to add a background script?</label>
+            <label>Which Manifest version do you want to use?</label>
             <br/>
             <span>
-                <button onclick="setValue('background_script', true, 5)" class="button" role="button">Yes</button>
-                <button onclick="setValue('background_script', false, 5)" class="button" role="button">No</button>
+                <button onclick="setValue('manifest_version', 2, 5)" class="button" role="button">Manifest V2</button>
+                <button onclick="setValue('manifest_version', 3, 5)" class="button" role="button">Manifest V3</button>
             </span>
         </div>
         <div class="question" autocomplete="off" id="q-5" data-active="false">
-            <label>Do you want to add a content script?</label>
+            <label>Do you want to add a background script?</label>
             <br/>
             <span>
-                <button onclick="setValue('content_script', true, 6)" class="button" role="button">Yes</button>
-                <button onclick="setValue('content_script', false, 6)" class="button" role="button">No</button>
+                <button onclick="setValue('background_script', true, 6)" class="button" role="button">Yes</button>
+                <button onclick="setValue('background_script', false, 6)" class="button" role="button">No</button>
             </span>
         </div>
         <div class="question" autocomplete="off" id="q-6" data-active="false">
-            <label>Do you want to add a browser action?</label>
+            <label>Do you want to add a content script?</label>
             <br/>
             <span>
-                <button onclick="setValue('browser_action', true, 7)" class="button" role="button">Yes</button>
-                <button onclick="setValue('browser_action', false, 7)" class="button" role="button">No</button>
+                <button onclick="setValue('content_script', true, 7)" class="button" role="button">Yes</button>
+                <button onclick="setValue('content_script', false, 7)" class="button" role="button">No</button>
             </span>
         </div>
         <div class="question" autocomplete="off" id="q-7" data-active="false">
-            <label>Do you want to add a page action?</label>
+            <label>Do you want to add a browser action?</label>
             <br/>
             <span>
-                <button onclick="setValue('page_action', true, 8)" class="button" role="button">Yes</button>
-                <button onclick="setValue('page_action', false, 8)" class="button" role="button">No</button>
+                <button onclick="setValue('browser_action', true, 8)" class="button" role="button">Yes</button>
+                <button onclick="setValue('browser_action', false, 8)" class="button" role="button">No</button>
             </span>
         </div>
         <div class="question" autocomplete="off" id="q-8" data-active="false">
+            <label>Do you want to add a page action?</label>
+            <br/>
+            <span>
+                <button onclick="setValue('page_action', true, 9)" class="button" role="button">Yes</button>
+                <button onclick="setValue('page_action', false, 9)" class="button" role="button">No</button>
+            </span>
+        </div>
+        <div class="question" autocomplete="off" id="q-9" data-active="false">
             <label>Do you want to add extension options?</label>
             <br/>
             <span>
