@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "scripts": {
     "build": "webpack --mode production",
-    "deploy": "webpack --mode production && gh-pages -d public -r https://$GH_TOKEN@github.com/web-ext-labs/ui-tool",
+    "deploy": "webpack --mode production && gh-pages -d public -r https://x-access-token:$GH_TOKEN@github.com/web-ext-labs/ui-tool",
     "go": "webpack-dev-server --mode development --progress",
     "test": "eslint src/*"
   },

@@ -10,12 +10,12 @@ jobs:
   publish-gh-pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 12
+          node-version: 20
       - run: npm ci
-      - run: git config user.name "Trishul Goel" && git config user.email "trishul.goel@gmail.com"
+      - run: git config user.name "${{ github.actor }}" && git config user.email "${{ github.actor }}@users.noreply.github.com"
       - run: npm run deploy
         env:
           GH_TOKEN: ${{secrets.SECRET_GITHUB_TOKEN}}
